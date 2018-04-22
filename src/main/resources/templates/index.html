@@ -14,22 +14,46 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+    <style type="text/css">
+        body{
+            margin-top: 40px;
+            margin-right: 70px;
+            margin-bottom: 100px;
+            margin-left: 70px; }
+    </style>
+
 </head>
 <body>
-<div style="margin: auto; max-width: 400px">
+<div style="margin: auto; max-width: 600px">
 
-    <!--<a href="/dodajWspolnote">Dodaj wspólnotę</a>-->
-    <!--<a href="/dodajMieszkanie">Dodaj mieszkanie</a>-->
-    <!--<a href="/dodajMieszkanca">Dodaj mieszkańca</a>-->
+    <a href="/dodajWspolnote">Dodaj wspólnotę  </a>
+    <a href="/dodajMieszkanie">Dodaj mieszkanie  </a>
+    <a href="/dodajMieszkanca">Dodaj mieszkańca</a><br>
 
 
     <h2>Lista wspólnot</h2>
 
-    <!--<ul class="list-group">-->
-        <!--<li class="list-group-item" th:each="wspolnota: ${wspolnoty}">-->
-            <!--<a th:href="'/wspolnota?id=' + ${wspolnota.id}" th:text="${wspolnota.nazwa}"></a>-->
-        <!--</li>-->
-    <!--</ul>-->
+    <ul class="list-group">
+        <li class="list-group-item" th:each="wspolnota: ${wspolnoty}">
+            <a th:href="'/wspDetails?id=' + ${wspolnota.id}" th:text="${wspolnota.nazwa}"></a>
+        </li>
+    </ul><br>
+
+    <h2>Lista mieszkań</h2>
+    <ul class="list-group">
+        <li class="list-group-item" th:each="mieszkanie: ${mieszkanie}">
+            <a th:href="'/mieszDetails?id=' + ${mieszkanie.id}" th:text="${mieszkanie.number}"></a>
+        </li>
+    </ul><br>
+
+
+    <h2>Lista mieszkańców</h2>
+    <ul class="list-group">
+        <li class="list-group-item" th:each="osoba: ${mieszkaniec}">
+            <a th:href="'/mieszkaniecDetails?id=' + ${osoba.id}" th:text="${osoba.imie}+' '+${osoba.nazwisko}"></a>
+        </li>
+    </ul>
+
 
 </div>
 </body>

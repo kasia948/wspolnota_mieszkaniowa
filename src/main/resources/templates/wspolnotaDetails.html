@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Wspólnota</title>
+    <title>Domy</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -16,41 +16,51 @@
             crossorigin="anonymous"></script>
 
     <style type="text/css">
-        body{
+        body {
             margin-top: 40px;
             margin-right: 70px;
             margin-bottom: 100px;
-            margin-left: 70px; }
+            margin-left: 70px;
+        }
     </style>
 </head>
+
 <body>
 
-<div style="margin: auto; max-width: 400px">
 
-    <h2>Dodawanie nowej wspólnoty</h2>
-
-    <form method="post" action="/addwspolnota" th:object="${wspolnota}">
-
-        <div class="form-group">
-            <label for="nazwa">Nazwa</label>
-            <input th:field="*{nazwa}" type="text" class="form-control" id="nazwa" placeholder="Wpisz nazwę"/>
-        </div>
-
-        <div class="form-group">
-            <label for="ulica">Ulica</label>
-            <input th:field="*{ulica}" type="text" class="form-control" id="ulica" placeholder="Wpisz ulicę"/>
-        </div>
-
-        <div class="form-group">
-            <label for="numer">Numer</label>
-            <input th:field="*{numer}" type="text" class="form-control" id="numer" placeholder="Wpisz numer"/>
-        </div>
-
-
-        <button type="submit" class="btn btn-primary">Dodaj</button>
-
-    </form>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Wspolnota </h1>
+        <p class="lead">Poniżej znajdziesz dane szczegółowe dotyczące wspólnoty</p>
+    </div>
 </div>
+
+
+
+    <table class="table table-hover" style=" max-width: 1200px">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nazwa</th>
+            <th scope="col">Ulica</th>
+            <th scope="col">Numer</th>
+        </tr>
+        </thead>
+        <tbody th:each="wsp:${wspolnota}">
+        <tr>
+            <td th:text="${wsp.id}"></td>
+            <td th:text="${wsp.nazwa}"></td>
+            <td th:text="${wsp.ulica}"></td>
+            <td th:text="${wsp.numer}"></td>
+
+        </tr>
+        </tbody>
+    </table><br><br>
+
+<h4>Mieszkania</h4><br>
+<ul class="list-group" th:each="mieszkanie:${mieszkania}" style="margin-left: 70px";>
+    <li><a th:href="'/mieszDetails?id=' +${mieszkanie.id}" class="card-text" th:text="'Mieszkanie nr: '+${mieszkanie.number}"></li>
+</ul>
 
 
 </body>

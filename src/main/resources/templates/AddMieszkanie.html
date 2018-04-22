@@ -27,26 +27,24 @@
 
 <div style="margin: auto; max-width: 400px">
 
-    <h2>Dodawanie nowej wspólnoty</h2>
+    <h2>Dodawanie nowego mieszkania</h2>
 
-    <form method="post" action="/addwspolnota" th:object="${wspolnota}">
+    <form method="post" action="/addmieszkanie" th:object="${mieszkanie}">
 
         <div class="form-group">
-            <label for="nazwa">Nazwa</label>
-            <input th:field="*{nazwa}" type="text" class="form-control" id="nazwa" placeholder="Wpisz nazwę"/>
+            <label for="number">Numer</label>
+            <input th:field="*{number}" type="number" class="form-control" id="number" placeholder="Wpisz numer mieszkania"/>
         </div>
 
         <div class="form-group">
-            <label for="ulica">Ulica</label>
-            <input th:field="*{ulica}" type="text" class="form-control" id="ulica" placeholder="Wpisz ulicę"/>
+            <label for="powierzchnia">Powierzchnia</label>
+            <input th:field="*{powierzchnia}" type="number" class="form-control" id="powierzchnia" placeholder="Wpisz powierzchnię"/>
         </div>
 
         <div class="form-group">
-            <label for="numer">Numer</label>
-            <input th:field="*{numer}" type="text" class="form-control" id="numer" placeholder="Wpisz numer"/>
+            <label for="wspolnota">Wspólnota</label>
+            <input th:field="*{wspolnota}" type="text" class="form-control" id="wspolnota" placeholder="Wpisz wspólnotę"/>
         </div>
-
-
         <button type="submit" class="btn btn-primary">Dodaj</button>
 
     </form>

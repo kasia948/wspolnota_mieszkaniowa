@@ -27,25 +27,31 @@
 
 <div style="margin: auto; max-width: 400px">
 
-    <h2>Dodawanie nowej wspólnoty</h2>
+    <h2>Dodawanie nowego mieszkańca</h2>
 
-    <form method="post" action="/addwspolnota" th:object="${wspolnota}">
-
-        <div class="form-group">
-            <label for="nazwa">Nazwa</label>
-            <input th:field="*{nazwa}" type="text" class="form-control" id="nazwa" placeholder="Wpisz nazwę"/>
-        </div>
+    <form method="post" action="/addmieszkaniec" th:object="${mieszkaniec}">
 
         <div class="form-group">
-            <label for="ulica">Ulica</label>
-            <input th:field="*{ulica}" type="text" class="form-control" id="ulica" placeholder="Wpisz ulicę"/>
+            <label for="imie">Imię</label>
+            <input th:field="*{imie}" type="text" class="form-control" id="imie" placeholder="Wpisz imię"/>
         </div>
 
-        <div class="form-group">
-            <label for="numer">Numer</label>
-            <input th:field="*{numer}" type="text" class="form-control" id="numer" placeholder="Wpisz numer"/>
-        </div>
+        <label for="nazwisko">Nazwisko</label>
+        <input th:field="*{nazwisko}" type="text" class="form-control" id="nazwisko" placeholder="Wpisz nazwisko"/>
 
+        <label for="plec">Płeć</label>
+        <input th:field="*{plec}" type="text" class="form-control" id="plec" placeholder="KOBIETA/MEZCZYZNA"/>
+
+
+
+<!--<div class="form-group">-->
+    <!--<label class="my-1 mr-2" for="type">Wybierz płeć</label>-->
+    <!--<select th:field="*{plec}" class="custom-select my-1 mr-sm-2" id="type">-->
+        <!--<option value="" selected>Wybierz...</option>-->
+        <!--<option value="KOBIETA">Kobieta</option>-->
+        <!--<option value="MEZCZYZNA">Mężczyzna</option>-->
+    <!--</select>-->
+<!--</div>-->
 
         <button type="submit" class="btn btn-primary">Dodaj</button>
 

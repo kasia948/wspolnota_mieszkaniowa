@@ -3,7 +3,7 @@ package com.wspolnota.wspolnota;
 public enum MieszkaniecPlec {
 
     KOBIETA("Kobieta"),
-    MEZCZYZNA("Mężczyzna");
+    MEZCZYZNA("Mezczyzna");
 
     String displayName;
 
